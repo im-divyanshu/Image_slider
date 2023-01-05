@@ -1,0 +1,78 @@
+MainWidget:
+
+<MainWidget>:
+
+    BoxLayout:
+        orientation:"vertical"
+        size_hint:None,None
+        size:root.size
+
+        Image:
+            id:image
+            source:"welcome.jfif"
+            allow_stretch:True
+            keep_ratio:False
+
+        GridLayout:
+            id:gridlayout
+            cols:4
+            size_hint:1,.2
+
+            Button:
+                text:"Start"
+                on_press:root.change_sub()
+                font_size:dp(30)
+                color:0,1,1,1
+
+            Button:
+                text:"Resume"
+                font_size:dp(30)
+                color:0,1,0,1
+                on_press:root.resume()
+
+            Button:
+                text:"Pause"
+                font_size:dp(30)
+                color:1,1,0,1
+                on_press:root.pause()
+
+            Button:
+                text:"Stop"
+                font_size:dp(30)
+                color:1,0,0,1
+                on_release:root.close_window()
+
+            Button:
+                id:phy
+                text:"Physics"
+                font_size:dp(30)
+                color:0,1,1,1
+                disabled:True
+                on_press:root.change_image_phys()
+                on_release:root.phys(3)
+
+            Button:
+                id:che
+                text:"Chemestry"
+                font_size:dp(30)
+                color:0,1,1,1
+                disabled:True
+                on_press:root.change_image_chem()
+                on_release:root.chem(3)
+
+            Button:
+                id:mat
+                text:"Math"
+                font_size:dp(30)
+                color:0,1,1,1
+                disabled:True
+                on_press:root.change_image_math()
+                on_release:root.mat(3)
+
+            Button:
+                id:cut
+                text:"x"
+                font_size:dp(30)
+                color:1,0,0,1
+                disabled:True
+                on_press:root.cut()
